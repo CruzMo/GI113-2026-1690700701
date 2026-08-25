@@ -26,16 +26,21 @@ namespace Lab02
             Console.WriteLine($"Rank: {rank}");
             Console.WriteLine($"Level:{level}");
             Console.WriteLine($"HP: {currentHp} / {maxHp}");
+            Console.WriteLine($"Attack Power: {attackPower}");
+            Console.WriteLine($"Critical Multiplier: {critMultiplier}");
+            Console.WriteLine($"Is Boss: {isBoss}");
             Console.WriteLine();
 
             int hpPercet = currentHp * 100 / maxHp;
-            Console.WriteLine($"HP Percent; {hpPercet}%");
+            Console.WriteLine($"HP Percent: {hpPercent}%");
             Console.WriteLine();
             Console.WriteLine("Kirin takes 60 damage!");
+            currentHp -= 60;
             Console.WriteLine();
             Console.WriteLine($"===== BOSS STATUS: AFTER DAMAGE =====");
             Console.WriteLine($"HP: {currentHp} / {maxHp}");
-            Console.WriteLine($"{currentHp * 100 / maxHp}");
+            hpPercent = currentHp * 100 / maxHp;
+            Console.WriteLine($"HP Percent: {hpPercent}%");
 
         }
     }

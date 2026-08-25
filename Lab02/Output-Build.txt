@@ -1,0 +1,5 @@
+﻿1>------ Build started: Project: Lab02, Configuration: Debug|AnyCPU ------
+1>C:\Users\User\Documents\GitHub\GI113-2026-1690700701\Lab02\Program.cs(35,46,35,55): error CS0103: The name 'hpPercent' does not exist in the current context
+1>C:\Users\User\Documents\GitHub\GI113-2026-1690700701\Lab02\Program.cs(42,13,42,22): error CS0103: The name 'hpPercent' does not exist in the current context
+1>C:\Users\User\Documents\GitHub\GI113-2026-1690700701\Lab02\Program.cs(43,46,43,55): error CS0103: The name 'hpPercent' does not exist in the current context
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
