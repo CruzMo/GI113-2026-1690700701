@@ -31,7 +31,7 @@ namespace Lab02
             Console.WriteLine($"Is Boss: {isBoss}");
             Console.WriteLine();
 
-            int hpPercet = currentHp * 100 / maxHp;
+            int hpPercent = currentHp * 100 / maxHp;
             Console.WriteLine($"HP Percent: {hpPercent}%");
             Console.WriteLine();
             Console.WriteLine("Kirin takes 60 damage!");
@@ -41,7 +41,7 @@ namespace Lab02
             Console.WriteLine($"HP: {currentHp} / {maxHp}");
             hpPercent = currentHp * 100 / maxHp;
             Console.WriteLine($"HP Percent: {hpPercent}%");
-
+            Console.ReadKey();
         }
     }
 }
