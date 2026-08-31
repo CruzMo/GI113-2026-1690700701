@@ -28,19 +28,19 @@ namespace Lab03
                 $"\nAttack Power:{attackPower}\nCrit Multipllier:{critMultiplier}\nIs Boss:{isBoss}");
 
             // ทำ implicit int -> double
-            Console.WriteLine("\n-----Exact HP Percent (ni unteger truncation) -----");
+            Console.WriteLine("\n----- Implicit Conversion: HP as double) -----");
             double currentHpDouble = currentHp; //Int -->Double แปลงแบบไม่ Cast ใส่ค่าได้เลย
             Console.WriteLine($"HP (double): {currentHpDouble}");
 
             //ทำ implicit หลังการคำนวนเปอร์เซ้นต์ ที่ผลลัพธ์มีทศนิยม
-            Console.WriteLine("\n-----Exact HP Percent (no integer truncation) -----");
-            double hpPercent = currentHpDouble * 100 / maxHp; //Int หาร int จากนั้นแปลงผลลลัพธ์การคำนวนเป็น double เพื่อเก็บทศนิยม
-            Console.WriteLine($"HpP Percent (exact): {hpPercent}%");
+            Console.WriteLine("\n----- Exact HP Percent (no integer truncation) -----");
+            double hpPercentExact = currentHpDouble * 100 / maxHp; //Int หาร int จากนั้นแปลงผลลลัพธ์การคำนวนเป็น double เพื่อเก็บทศนิยม
+            Console.WriteLine($"HP Percent (exact): {hpPercentExact}%");
 
             //ทำ Explicit โดยการ Casting (float) AttackPower ->> Int
             Console.WriteLine("\n----- Explicit Cast: Attack Power -> Display Int -----");
-            int attackInt = (int)attackPower; //เปลงข้อมูลโดยการ Cast Syntax: (ชนิดที่ต้องการแปลง)ชื่อตัวแปรที่อยากแปร 
-            Console.WriteLine($"Attack Power (int cast): {attackInt}");
+            int attackDisplay = (int)attackPower; //เปลงข้อมูลโดยการ Cast Syntax: (ชนิดที่ต้องการแปลง)ชื่อตัวแปรที่อยากแปร 
+            Console.WriteLine($"Attack Power (int cast): {attackDisplay}");
 
             //ส่วนสุดท้าย Cast + Convert
             Console.WriteLine("\n----- Cast vs Convert: Crit Multiplier -----");
