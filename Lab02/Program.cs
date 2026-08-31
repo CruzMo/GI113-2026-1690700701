@@ -113,6 +113,19 @@ namespace Lab02
             Console.WriteLine($"Critical Multiplier: {assassinCrit}");
             Console.WriteLine($"Is Stealth: {assassinIsStealth}");
             Console.WriteLine();
+
+
+            Console.WriteLine($"===== TEST =====");
+            // แบบสอง
+            Console.WriteLine($"\nName:{assassinName}\nHP:{assassinHp}\nArrack Power:{assassinAttack}");
+
+            // แบบสาม
+            Console.WriteLine($"\nName:{mageName}" +
+                $"\nHP:{mageHp}" +
+                $"\nMagic Power:{mageMagic}");
+
+            // assassin แบบสั้นลง
+            Console.WriteLine($"\nName:{assassinName}\nLevel:{assassinLevel}\nHP:{assassinHp}\nAttack Power:{assassinAttack}\nCritical Mulitplier{assassinCrit}\nIs Stealth:{assassinIsStealth}");
             Console.ReadLine();
         }
 
