@@ -2,7 +2,7 @@
  * Student ID : 1690700701
  * Name       : Thampapon Thuamboribun
  * Section    : 129A
- * No.        : 0
+ * No.        : 30
  * Course     : GI113 Computer Programming (GI)
  */
 

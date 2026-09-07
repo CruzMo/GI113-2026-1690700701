@@ -85,6 +85,8 @@ namespace Lab04
             Console.WriteLine($"Valid input: {slotOk}");
             Console.WriteLine($"Slot: {slot}");
 
+          
+
 
 
 
