@@ -1,4 +1,14 @@
-﻿namespace Lan05
+﻿/*
+* Student ID : 1690700701
+* Name       : Thampapon Thuamboribun
+* Section    : 129A
+* No.        : 30
+* Course     : GI113 Computer Programming (GI)
+*/
+
+using System;
+
+namespace Lan05
 {
     internal class Program
     {
@@ -57,6 +67,33 @@
             Console.WriteLine($"Critical hit roll: {roll} (critical: {isCrit})");
             Console.WriteLine($"Normal Attack would deal Critical: {criDamage} DMG");
 
+            // Comparison + Logical Operators
+            bool swanHitsHarder = swanAttack > monsterAttack;
+            bool canOneShotWithNormal = normelDamege >= monsterHp;
+            bool monsterCanOneShotSwan = counterDamge >= swanHp;
+            bool safeTrade = normelDamege > counterDamge && !monsterCanOneShotSwan;
+            bool luckyOrLethal = isCrit || canOneShotWithNormal;
+
+            Console.WriteLine($"Swan hits harder: {swanHitsHarder}");
+            Console.WriteLine($"Can one-shot with normal: {canOneShotWithNormal}");
+            Console.WriteLine($"Monster can one-shot Swan: {monsterCanOneShotSwan}");
+            Console.WriteLine($"Safe trade: {safeTrade}");
+            Console.WriteLine($"Lucky or lethal: {luckyOrLethal}");
+
+            // Swan attacks for real
+            int monsterMaxHp = monsterHp;
+
+            monsterHp -= normelDamege;
+
+            Console.WriteLine($"Swan attacks! Monster HP: {monsterHp}/{monsterMaxHp}");
+
+            bool monsterDefeated = monsterHp <= 0;
+            int goldEarned = (monsterMaxHp - monsterHp) * 2;
+
+            Console.WriteLine($"Monster defeated: {monsterDefeated}");
+            Console.WriteLine($"Gold earned: {goldEarned}");
+
+            Console.ReadKey();
 
         }
     }
