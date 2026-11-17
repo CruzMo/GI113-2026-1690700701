@@ -3,9 +3,8 @@
     "unity": {
       "command": "node",
       "args": [
-        "D:/1690700701/unity-week10/Tools/unity-mcp-server/src/index.js"
+        "C:/Users/User/Documents/GitHub/GI113-2026-1690700701/unity-week10/Tools/unity-mcp-server/src/index.js"
       ]
     }
   }
 }
-

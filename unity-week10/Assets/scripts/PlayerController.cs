@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -82,6 +83,18 @@ public class PlayerController : MonoBehaviour
         currentLives = maxLives;
         UpdateHeartsUI();
         UpdateKeysUI();
+
+        if (coinText == null)
+        {
+            var coinTextObj = GameObject.Find("CoinText");
+            if (coinTextObj != null) coinText = coinTextObj.GetComponent<TMP_Text>();
+        }
+        UpdateCoinUI();
+
+        if (debugText != null && !string.IsNullOrEmpty(playerName))
+        {
+            debugText.text = playerName;
+        }
 
         if (gameOverPanel != null)
         {
@@ -186,6 +199,38 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isGrounded = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Coin") || collision.gameObject.name.StartsWith("Coin"))
+        {
+            AddCoin();
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void AddCoin()
+    {
+        coin++;
+        UpdateCoinUI();
+
+        if (audioSource != null && coinSound != null)
+        {
+            audioSource.PlayOneShot(coinSound);
+        }
+        else if (coinSound != null)
+        {
+            AudioSource.PlayClipAtPoint(coinSound, transform.position);
+        }
+    }
+
+    public void UpdateCoinUI()
+    {
+        if (coinText != null)
+        {
+            coinText.text = $"Coin {coin}/{totalCoin}";
+        }
     }
 
     public void TakeDamage()
@@ -328,7 +373,15 @@ public class PlayerController : MonoBehaviour
     public void ReloadScene()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        var activeScene = SceneManager.GetActiveScene();
+        if (!string.IsNullOrEmpty(activeScene.name))
+        {
+            SceneManager.LoadScene(activeScene.name);
+        }
+        else if (activeScene.buildIndex >= 0)
+        {
+            SceneManager.LoadScene(activeScene.buildIndex);
+        }
     }
 
     public void Respawn()
